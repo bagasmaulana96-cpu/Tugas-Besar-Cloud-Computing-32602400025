@@ -1,0 +1,98 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-base: #ffffff;
+    --bg-surface: #f5f5f5;
+    --bg-card: #eeeeee;
+    --bg-hover: #e8e8e8;
+    --bg-border: #e0e0e0;
+    --text-primary: #0a0a0a;
+    --text-secondary: #555555;
+    --text-muted: #999999;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.06);
+  }
+
+  .dark {
+    --bg-base: #0a0a0a;
+    --bg-surface: #0f0f0f;
+    --bg-card: #111111;
+    --bg-hover: #161616;
+    --bg-border: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #888888;
+    --text-muted: #444444;
+    --glass-bg: rgba(17, 17, 17, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.06);
+  }
+
+  * {
+    @apply border-[var(--bg-border)];
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+  }
+
+  .glass-xl {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+  }
+
+  .text-glow {
+    text-shadow:
+      0 0 40px rgba(192, 132, 252, 0.5),
+      0 0 80px rgba(192, 132, 252, 0.3);
+  }
+}
+
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1e1e1e;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2d1b4e;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e1e1e transparent;
+}
