@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -30,7 +30,8 @@ export default function LoginPage() {
       return;
     }
 
-    router.push("/dashboard/profile");
+    router.refresh();
+    router.push("/menu-select");
   }
 
   return (
@@ -82,7 +83,7 @@ export default function LoginPage() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder="��������"
               className="bg-bg-surface border border-bg-border focus:border-purple-main rounded-xl px-3 py-2.5 outline-none transition-colors duration-150 text-text-primary placeholder:text-text-muted w-full"
             />
           </div>

@@ -58,7 +58,7 @@ export default function RegisterPage() {
         is_default: true,
       }));
       await supabase.from("finance_categories").insert(catRows);
-      router.push("/dashboard/profile");
+      router.push("/menu-select");
     }
     setLoading(false);
   };

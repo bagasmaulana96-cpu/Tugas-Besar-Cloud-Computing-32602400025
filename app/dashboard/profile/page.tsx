@@ -1,6 +1,6 @@
 ﻿import { createClient } from "@/lib/supabase/server";
 import { getLevelFromExp } from "@/lib/exp";
-import AvatarUpload from "@/components/profile/avatar-upload";
+import AvatarUploadWrapper from "@/components/profile/avatar-upload-wrapper";
 import StatsWidget from "@/components/profile/stats-widget";
 import { Pencil } from "lucide-react";
 import { ProfileStats } from "@/types";
@@ -61,10 +61,9 @@ export default async function ProfilePage() {
     <div className="max-w-screen-xl mx-auto px-4 md:px-6 py-8 animate-fade-in">
       <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6">
         <div className="bg-bg-card/60 backdrop-blur-md border border-white/[0.06] rounded-2xl p-8 flex flex-col items-center text-center h-fit">
-          <AvatarUpload
+          <AvatarUploadWrapper
             avatarUrl={profile?.avatar_url ?? null}
             name={profile?.name ?? null}
-            onUploadSuccess={() => {}}
           />
           <h1 className="mt-4 text-2xl font-bold text-purple-light">
             {profile?.name ?? "Unnamed User"}

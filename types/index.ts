@@ -1,6 +1,6 @@
-﻿export type TaskPriority = 'low' | 'medium' | 'high';
-export type TransactionType = 'income' | 'expense';
-export type CategoryType = 'income' | 'expense';
+﻿export type TaskPriority = "low" | "medium" | "high";
+export type TransactionType = "income" | "expense";
+export type CategoryType = "income" | "expense";
 
 export interface Profile {
   id: string;
@@ -52,10 +52,28 @@ export interface Skill {
   created_at: string;
 }
 
+export type RecurrenceType = "daily" | "weekly" | "monthly";
+export type ScheduleColor = "purple" | "green" | "blue" | "amber" | "red";
+
+export interface Schedule {
+  id: string;
+  user_id: string;
+  title: string;
+  description: string | null;
+  date: string;
+  start_time: string;
+  end_time: string;
+  is_recurring: boolean;
+  recurrence_type: RecurrenceType | null;
+  recurrence_days: number[] | null;
+  recurrence_end_date: string | null;
+  color: ScheduleColor;
+  created_at: string;
+}
 export interface TransactionWithCategory extends Transaction {
   finance_categories: FinanceCategory | null;
 }
-
+// Return shape of lib/exp.ts getLevelFromExp()
 export interface LevelInfo {
   level: number;
   title: string;
@@ -64,14 +82,17 @@ export interface LevelInfo {
   progressPercent: number;
 }
 
-export type TaskFilter = 'all' | 'active' | 'completed' | 'today';
+// Used by components/todo/task-filter.tsx and app/dashboard/todo/page.tsx
+export type TaskFilter = "all" | "active" | "completed" | "today";
 
+// Used by components/finance/finance-summary.tsx
 export interface FinanceSummary {
   totalIncome: number;
   totalExpense: number;
   netBalance: number;
 }
 
+// Used by components/profile/stats-widget.tsx and app/dashboard/profile/page.tsx
 export interface ProfileStats {
   level: number;
   expToday: number;

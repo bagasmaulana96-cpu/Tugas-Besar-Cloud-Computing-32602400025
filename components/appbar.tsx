@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -52,9 +52,10 @@ export default function Appbar() {
 
   const navLinks = [
     { href: "/dashboard/profile", label: "Profile" },
-    { href: "/dashboard/todo", label: "To‑Do" },
+    { href: "/dashboard/todo", label: "To-Do" },
     { href: "/dashboard/finance", label: "Finance" },
     { href: "/dashboard/skill", label: "Skill RPG" },
+    { href: "/dashboard/schedule", label: "Schedule" },
   ];
 
   return (
@@ -62,7 +63,7 @@ export default function Appbar() {
       <header className="sticky top-0 z-50 w-full h-14 bg-bg-surface/80 backdrop-blur-md border-b border-bg-border">
         <div className="max-w-screen-xl mx-auto px-4 md:px-6 h-full flex items-center justify-between">
           {/* Logo */}
-          <Link href="/dashboard/profile" className="flex items-center gap-2.5">
+          <Link href="/menu-select" className="flex items-center gap-2.5">
             <div className="bg-purple-main rounded-lg p-1.5">
               <Zap size={16} className="text-white" />
             </div>
